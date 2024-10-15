@@ -1,0 +1,276 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+body {
+    background-image: linear-gradient(to top,
+            rgb(83, 92, 145),
+            rgb(27, 26, 85));
+    height: 100vh;
+}
+
+.img-clouds {
+    z-index: 100;
+    width: 165px;
+    position: absolute;
+    top: -5%;
+    right: 0;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    padding: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 94%);
+    padding: 0;
+    margin: 10px 15px;
+    display: block;
+    position: relative;
+    font-size: clamp(1rem,2vw,1.3rem);
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    left: 50%;
+    background: #F0F0F0;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: #F0F0F0;
+}
+
+.navbar ul i {
+    margin-right: 10px;
+}
+
+.home_section {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 50px;
+    height: 80vh;
+    width: 100%;
+}
+
+.home_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_section #project_div {
+    background-color: rgb(83, 92, 145);
+    color: hsl(0, 0%, 94%);
+    width: 50%;
+    height: 70%;
+    padding: 20px;
+    scrollbar-width: thin;
+    gap: 30px;
+}
+
+.home_section #project_div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+
+.home_section #project_div img {
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+}
+
+.txt-shadow {
+    text-shadow: 3px 2px 4px rgb(146, 144, 195, 0.5),
+        3px 2px 4px rgba(146, 144, 195, 0.5),
+        3px 2px 4px rgba(146, 144, 195, 0.5);
+}
+
+.home_container h1 {
+    font-size: clamp(32px, 5vw, 64px);
+    color: hsl(0, 0%, 94%);
+    margin: 30px 0 30px 0;
+}
+
+.home_container h1 span {
+    display: inline-block;
+    letter-spacing: -10px;
+    /* Adjust this value to remove the gap */
+}
+
+.home_container p {
+    font-size: clamp(13px, 2vw, 26px);
+    color: hsl(0, 0%, 94%);
+    margin: 0 0 25px 0;
+    font-weight: 400px;
+    padding: 0 20px;
+}
+
+.home_container button {
+    position: relative;
+    padding: clamp(5px, 5vw, 10px) clamp(10px, 10vw, 20px);
+    font-size: 1rem;
+    color: hsl(0, 0%, 94%);
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.home_container button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid hsl(0, 0%, 94%);
+    ;
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+    pointer-events: none;
+}
+
+.home_container button:hover::before {
+    transform: rotate(360deg);
+}
+
+.about_section,
+.hobbySection,
+.skills_section {
+    display: flex;
+    height: auto;
+    padding: clamp(18px, 5vh, 35px);
+    color: hsl(0, 0%, 94%);
+}
+
+.about_section h1,
+.hobbySection h1,
+.skills_section h1 {
+    font-size: clamp(20px, 5vw, 40px);
+    margin: 0;
+}
+
+.about_container img {
+    width: clamp(150px, 25vw, 250px);
+    object-fit: cover;
+    border-radius: 20%;
+    clip-path: circle(50% at 50% 50%);
+    transition: width ease 0.3s;
+    margin-left: 20px;
+}
+
+.about_container img:hover {
+    transform: scale(1.3);
+}
+
+.about_container p,
+.skills_section p,
+.home_section #project_div span {
+    font-size: clamp(10px, 2vw, 20px);
+    padding: 5px;
+}
+
+.about_container>div {
+    display: flex;
+    gap: 20px;
+}
+
+.about_container>div .div-list ul {
+    list-style: none;
+    padding: 20px 0 0 60px;
+    font-size: clamp(10px, 2vw, 20px);
+}
+
+.about_container>div .div-list ul li {
+    margin: 20px 0;
+}
+
+.about_container>div .div-list ul i {
+    margin-right: 10px;
+}
+
+.skills_section .skills_container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 40px 20px 20px;
+}
+
+.skills_section .skillsRating {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 6%;
+    gap: 5px;
+    width: 50%;
+    background-color: rgb(83, 92, 145, 0.5);
+    border-radius: 30px;
+    box-shadow: 5px 3px 5px rgb(27, 26, 85);
+    padding-block: 30px;
+}
+
+.skills_section .skillsRating meter {
+    width: 100%;
+    height: 25px;
+}
+
+.skills_section .skillsRating meter::-webkit-meter-optimum-value {
+    background: rgba(130, 178, 255, 1);
+    border: 0.5px solid rgb(27, 26, 85);
+    border-radius: 3px;
+}
+
+.skills_section .skillsRating>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imageContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+}
+
+.imageContainer img {
+    height: 300px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 20%;
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease;
+}
+
+.imageContainer img:hover {
+    width: auto;
+    transform: scale(1.1);
+    margin-left: 30px;
+}
