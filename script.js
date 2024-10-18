@@ -26,3 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
         sections[0].style.display = 'block';
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerIcon = document.getElementById("showNavbar");
+    const navBar = document.getElementById("navbar");
+
+    burgerIcon.addEventListener('click', function () {
+        if (navBar.classList.contains('active')) {
+            navBar.classList.remove('active');
+        } else {
+            navBar.classList.add('active');
+        }
+    });
+});

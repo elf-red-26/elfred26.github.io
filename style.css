@@ -13,7 +13,7 @@ body {
 }
 
 .img-clouds {
-    z-index: 100;
+    z-index: -1;
     width: 165px;
     position: absolute;
     top: -5%;
@@ -22,6 +22,9 @@ body {
 
 .navbar {
     background-color: transparent;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -38,7 +41,7 @@ body {
     margin: 10px 15px;
     display: block;
     position: relative;
-    font-size: clamp(1rem,2vw,1.3rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
 .navbar ul li a::after {
@@ -68,7 +71,7 @@ body {
     justify-content: center;
     align-items: start;
     padding-top: 50px;
-    height: 80vh;
+    height: auto;
     width: 100%;
 }
 
@@ -163,8 +166,9 @@ body {
 .hobbySection,
 .skills_section {
     display: flex;
+    /* background-color: white; */
     height: auto;
-    padding: clamp(18px, 5vh, 35px);
+    padding: 0 clamp(18px, 5vh, 35px);
     color: hsl(0, 0%, 94%);
 }
 
@@ -262,8 +266,8 @@ body {
 }
 
 .imageContainer img {
-    height: 300px;
-    width: 100px;
+    height: clamp(150px, 30vw, 300px);
+    width: clamp(50px, 10vw, 100px);
     object-fit: cover;
     border-radius: 20%;
     transition: transform 0.5s ease-in-out, border-radius 0.5s ease;
@@ -273,4 +277,50 @@ body {
     width: auto;
     transform: scale(1.1);
     margin-left: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+        background-color: rgb(83, 92, 145);
+        width: 30%;
+        height: 100dvh;
+        position: absolute;
+        align-items: flex-start;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .navbar.active {
+        display: flex;
+        /* Show the navbar */
+        transform: translateX(0);
+        /* Slide in from the left */
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .navbar ul li a {
+        margin: 10px 0;
+    }
+
+    .burger_icon i {
+        display: block;
+        color: #F0F0F0;
+        font-size: 1.5rem;
+        margin: 30px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .navbar.active~.burger_icon i {
+        transform: translateX(30%);
+    }
 }
