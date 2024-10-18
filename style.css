@@ -66,6 +66,15 @@ body {
     margin-right: 10px;
 }
 
+.burger_icon i {
+    display: none;
+    color: #F0F0F0;
+    font-size: 1.5rem;
+    margin: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
 .home_section {
     display: flex;
     justify-content: center;
