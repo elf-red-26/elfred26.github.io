@@ -41,7 +41,7 @@ body {
     margin: 10px 15px;
     display: block;
     position: relative;
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(0.7rem, 2vw, 1.3rem);
 }
 
 .navbar ul li a::after {
@@ -94,7 +94,7 @@ body {
 .home_section #project_div {
     background-color: rgb(83, 92, 145);
     color: hsl(0, 0%, 94%);
-    width: 50%;
+    width: 60%;
     height: 70%;
     padding: 20px;
     scrollbar-width: thin;
@@ -105,13 +105,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: fit-content;
+    width: auto;
+    gap: 15px;
 }
 
 .home_section #project_div img {
     width: 300px;
     height: 300px;
-    margin: 20px;
+    margin: 15px;
 }
 
 .txt-shadow {
@@ -316,9 +317,7 @@ body {
         padding: 20px;
     }
 
-    .navbar ul li a {
-        margin: 10px 0;
-    }
+    .navbar ul li a {margin: 10px 0;}
 
     .burger_icon i {
         display: block;
@@ -329,7 +328,27 @@ body {
         transition: transform 0.3s ease;
     }
 
-    .navbar.active~.burger_icon i {
-        transform: translateX(30%);
+    .navbar.active~.burger_icon i {transform: translateX(30%);}
+
+    .home_section #project_div {
+        width: 60%;
+        height: 70%;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .home_section #project_div>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0f0f070;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .home_section #project_div img{
+        transform: scale(0.8);
+        margin: 0;
     }
 }
