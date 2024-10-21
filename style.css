@@ -351,3 +351,15 @@ body {
         margin: 0;
     }
 }
+
+@media screen and (max-width: 480px){
+    .about_section .about_container>div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about_container>div .div-list ul{
+        padding: 0;
+    }
+}
